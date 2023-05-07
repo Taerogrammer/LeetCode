@@ -19,6 +19,8 @@ class Solution {
         
         var current: ListNode? = head
         
+        
+        //첫 번째 노드가 val일 경우
         while current != nil && current!.val == val {
             current = current!.next
         }
@@ -29,12 +31,12 @@ class Solution {
         
         while current != nil {
             
-            //다음 노드가 존재하는데, 그 노드가 val일 때
+            //다음 노드가 존재하는데, 그 노드가 val일 때 val을 건너뛴다.
             while current!.next != nil && current!.next!.val == val {
                 current!.next = current!.next!.next
             }
             
-            
+            //마지막 노드가 val인 경우에는 건너 뛰어도 val이 남아있음 
             if current!.next?.val == val {
                 current!.next = nil
             }
