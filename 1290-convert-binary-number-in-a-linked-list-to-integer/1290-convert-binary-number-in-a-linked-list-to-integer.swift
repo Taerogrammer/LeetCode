@@ -16,12 +16,16 @@ class Solution {
         var decimal: Int = 0
         var power: Int = 0
         
+        //배열에 값들 삽입
         while countArray != nil {
             binaryArray.append(countArray!.val)
             countArray = countArray!.next
         }
+        
+        //배열 거꾸로 설정
         binaryArray.reverse()
         
+        //첫 번째부터 value * 2의 0승 .. 으로 값 더하기
         for i in binaryArray {
             decimal += i * Int(pow(2, Double(power)))
             power += 1
