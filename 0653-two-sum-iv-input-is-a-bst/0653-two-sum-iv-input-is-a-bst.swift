@@ -14,7 +14,9 @@
  * }
  */
 
-
+/**
+inout : 함수 내에서 해당 변수를 수정하고 원래의 값에 반영하기 위해 사용됨
+*/
 
 class Solution {
     func findTarget(_ root: TreeNode?, _ k: Int) -> Bool {
@@ -23,14 +25,17 @@ class Solution {
     }
     
     private func findValue(_ node: TreeNode?, _ k: Int, _ set: inout Set<Int>) -> Bool {
+        //base case
         guard let node = node else {
             return false
         }
         
+        //만약 set에 k-해당 노드값이 존재한다면
         if set.contains(k - node.val) {
             return true
         }
         
+        //set에 k-해당 노드값이 존재하지 않는다면 노드값을 추가해두어 나중에 계산할 때 사용되게끔 함
         set.insert(node.val)
         
         return findValue(node.left, k, &set) || findValue(node.right, k, &set)
