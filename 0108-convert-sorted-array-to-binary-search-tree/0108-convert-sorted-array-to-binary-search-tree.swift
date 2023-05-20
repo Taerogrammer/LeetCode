@@ -33,6 +33,7 @@ class Solution {
         let mid = (left + right) / 2
         let node = TreeNode(nums[mid])
         
+        //왼쪽 자식의 left는 가장 끝이고, right는 중간의 바로 전 단계임
         node.left = convertToBST(nums, left, mid - 1)
         node.right = convertToBST(nums, mid + 1, right)
         
