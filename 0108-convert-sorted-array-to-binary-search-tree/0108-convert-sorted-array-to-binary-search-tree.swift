@@ -29,7 +29,7 @@ class Solution {
         if left > right {
             return nil
         }
-        // 
+        // nums의 중간 인덱스(중간값) 구하기
         let mid = (left + right) / 2
         let node = TreeNode(nums[mid])
         
