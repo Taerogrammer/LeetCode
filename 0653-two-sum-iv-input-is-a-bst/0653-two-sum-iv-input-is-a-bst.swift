@@ -16,6 +16,10 @@
 
 /**
 inout : 함수 내에서 해당 변수를 수정하고 원래의 값에 반영하기 위해 사용됨
+1. node값을 넣을 수 있는 set을 하나 지정
+2. 만약 k - node.val이 있다면 true를 반환
+3. 만약 없다면 node.val을 추가해두어 나중에 계산할 때 사용할 수 있도록 함
+4. node left, right에도 재귀적으로 호출시킴
 */
 
 class Solution {
