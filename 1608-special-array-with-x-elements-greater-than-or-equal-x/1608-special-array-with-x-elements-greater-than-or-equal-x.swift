@@ -16,7 +16,7 @@ class Solution {
         var left = 0, right = count - 1
         
         while left <= right {
-            let mid = left + (right - left) / 2
+            let mid = (left + right) / 2
             let x = count - mid
             
             if array[mid] >= x {
